@@ -1,0 +1,220 @@
+/* --- 1. Variables de Color --- */
+:root {
+    --primary: #5f1c16;     
+    --primary-light: #FF9800; 
+    --secondary: #FFD600;   
+    --bg-light: #FAFAFA;    
+    --text-dark: #263238;   
+    --text-light: #FFFFFF;  
+    --footer-bg: #1a1a1a;   
+    --gradient: linear-gradient(135deg, #E65100 0%, #FFD600 100%);
+}
+
+/* --- 2. Estilos Globales --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: (--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+a { text-decoration: none; }
+
+/* --- 3. Barra de Navegación --- */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem; font-weight: bold; 
+    color: #5f1c16;
+    text-transform: uppercase; letter-spacing: 2px;
+}
+
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { color: var(--text-dark); font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* --- 4. Hero Section --- */
+.hero {
+    height: 100vh;
+    background-image: url('img/foto17.jpg'); 
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative; color: var(--text-light);
+}
+
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(230, 81, 0, 0.7));
+}
+
+.hero-content { position: relative; z-index: 2; padding: 0 20px; max-width: 900px; }
+.hero h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: 3px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+.divider-hero { width: 100px; height: 4px; background: var(--secondary); margin: 20px auto; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
+
+.btn {
+    display: inline-block; padding: 15px 40px;
+    background: var(--gradient); color: white;
+    font-weight: bold; border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(230, 81, 0, 0.4);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(230, 81, 0, 0.6); }
+
+/* --- 5. Sección Concepto --- */
+.container { padding: 100px 10%; display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
+.text-block, .image-block { flex: 1; min-width: 300px; }
+.divider { height: 4px; width: 60px; background: var(--secondary); margin: 15px 0 25px 0; }
+.divider.center { margin: 15px auto 25px auto; }
+
+.image-block img {
+    width: 100%; border-radius: 8px;
+    box-shadow: 15px 15px 0px var(--secondary);
+    cursor: zoom-in; transition: transform 0.3s;
+}
+.image-block img:hover { transform: scale(1.02); }
+
+/* --- 6. Sección Galería (ESTILOS NUEVOS POR CATEGORÍA) --- */
+.gallery-section { background-color: white; padding: 100px 10%; }
+.container-gallery h2 { text-align: center; margin-bottom: 10px; }
+.subtitle { text-align: center; color: #888; margin-bottom: 60px; }
+
+/* Bloque de cada categoría */
+.category-block { margin-bottom: 80px; }
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    border-left: 5px solid var(--secondary); /* Línea amarilla a la izquierda */
+    padding-left: 15px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+.card-img { height: 220px; overflow: hidden; }
+.card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    cursor: zoom-in; transition: transform 0.5s;
+}
+.card-img img:hover { transform: scale(1.1); }
+.card-info { padding: 15px; text-align: center; border-bottom: 3px solid var(--secondary); }
+.card-info p { font-size: 0.9rem; color: #555; font-weight: 600; }
+
+/* --- Estilos para VIDEOS --- */
+.video-card {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.video-card video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+.video-card p {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* --- 7. Sección Equipo --- */
+.team-section { 
+    background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(230, 81, 0, 0.8)), 
+        url('img/foto17.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; 
+    padding: 100px 5%; 
+    text-align: center; 
+}
+.container-team { max-width: 1000px; margin: 0 auto; }
+.team-section h2 { color: var(--secondary); }
+.subtitle-dark { color: #e0e0e0; margin-bottom: 50px; }
+
+.team-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+
+.team-card {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(8px);
+    padding: 40px 30px;
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 280px; 
+    transition: all 0.3s ease;
+}
+.team-card:hover { border-color: var(--primary); transform: translateY(-5px); background: rgba(255, 255, 255, 0.2); }
+
+.avatar-img {
+    width: 120px; height: 120px;
+    border-radius: 50%; object-fit: cover;
+    margin: 0 auto 20px auto; display: block;
+    border: 3px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- 8. Footer Principal --- */
+.main-footer {
+    background-color: #111;
+    color: #555;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- 9. Animaciones --- */
+.fade-in { animation: fadeIn 1.5s ease forwards; opacity: 0; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(30px); } }
+.scroll-reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.scroll-reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- 10. Lightbox --- */
+.modal {
+    display: none; position: fixed; z-index: 2000; padding-top: 50px;
+    left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto; display: block; width: 80%; max-width: 1000px;
+    max-height: 80vh; object-fit: contain; border-radius: 5px;
+    animation-name: zoom; animation-duration: 0.6s;
+}
+#caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 10px 0; }
+.close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; }
+.close:hover, .close:focus { color: var(--primary); cursor: pointer; }
+@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
+@media only screen and (max-width: 700px){ .modal-content { width: 95%; } }
+@media (max-width: 768px) { .nav-links { display: none; } .container, .gallery-section { padding: 60px 5%; } .hero h1 { font-size: 2.5rem; } }
