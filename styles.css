@@ -15,7 +15,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: (--bg-light);
+    background-color: var(--bg-light); /* Corregido paréntesis faltante */
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -49,7 +49,8 @@ a { text-decoration: none; }
 /* --- 4. Hero Section --- */
 .hero {
     height: 100vh;
-    background-image: url('img/foto17.jpg'); 
+    /* RUTA CORREGIDA: Sin 'img/' */
+    background-image: url('render-ext7.jpg'); 
     background-size: cover; background-position: center; background-attachment: fixed;
     display: flex; align-items: center; justify-content: center;
     text-align: center; position: relative; color: var(--text-light);
@@ -87,18 +88,17 @@ a { text-decoration: none; }
 }
 .image-block img:hover { transform: scale(1.02); }
 
-/* --- 6. Sección Galería (ESTILOS NUEVOS POR CATEGORÍA) --- */
+/* --- 6. Sección Galería --- */
 .gallery-section { background-color: white; padding: 100px 10%; }
 .container-gallery h2 { text-align: center; margin-bottom: 10px; }
 .subtitle { text-align: center; color: #888; margin-bottom: 60px; }
 
-/* Bloque de cada categoría */
 .category-block { margin-bottom: 80px; }
 
 .category-title {
     font-size: 1.5rem;
     color: var(--primary);
-    border-left: 5px solid var(--secondary); /* Línea amarilla a la izquierda */
+    border-left: 5px solid var(--secondary); 
     padding-left: 15px;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -134,10 +134,10 @@ a { text-decoration: none; }
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-.video-card video {
+.video-card iframe { /* CAMBIO: De video a iframe para YouTube */
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    border: none;
     display: block;
 }
 .video-card p {
@@ -148,11 +148,12 @@ a { text-decoration: none; }
     color: var(--primary);
 }
 
-/* --- 7. Sección Equipo --- */
+/* --- 7. Sección Equipo (FONDO IGUAL AL TÍTULO) --- */
 .team-section { 
+    /* RUTA CORREGIDA: Sin 'img/', misma foto que el Hero */
     background-image: 
         linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(230, 81, 0, 0.8)), 
-        url('img/foto17.jpg'); 
+        url('render-ext7.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
